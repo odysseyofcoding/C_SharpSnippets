@@ -12,7 +12,7 @@
 				<![CDATA[private void WriteToFile(DirectoryInfo path, string filename, string extension, bool appendToFile = false)
         				{
             				if (!path.Exists) throw new NotImplementedException(); //e.g path.Create()
-            				using var sw = new StreamWriter($"{path}/{filename}.{extension}", appendToFile);
+            				using var sw = new StreamWriter($$"{path}/{filename}.{extension}", appendToFile);
             				sw.WriteLine("Hello");
         				}]]>
 			</Code>
