@@ -4,24 +4,18 @@
 		<Header>
 			<Title>WriteToFile</Title>
 			<Author>Odysseyofcoding</Author>
-			<Description>create a method to write a new file</Description>
-			<Shortcut>wf</Shortcut>
+			<Description>Code snippet to implement a Method which uses StreamWriter to write strings to a file.</Description>
+            <Shortcut>wf</Shortcut>
 		</Header>
 		<Snippet>
 			<Code Language="CSharp">
-				<![CDATA[private void WriteToFile(string $location$)
+				<![CDATA[private void WriteToFile(DirectoryInfo path, string filename, string extension, bool appendToFile = false)
         				{
-            				using var sw = new StreamWriter($location$);
+            				if (!path.Exists) throw new NotImplementedException(); //e.g path.Create()
+            				using var sw = new StreamWriter($"{path}/{filename}.{extension}", appendToFile);
             				sw.WriteLine("Hello");
         				}]]>
 			</Code>
-			<Declarations>
-				<Literal>
-					<ID>location</ID>
-					<Default>location</Default>
-					<ToolTip>parameter where the file is stored</ToolTip>
-				</Literal>
-			</Declarations>
 		</Snippet>
 	</CodeSnippet>
 </CodeSnippets>
